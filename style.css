@@ -105,4 +105,33 @@ button:hover {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
+
+}
+
+/* --- Mobile Layout Optimizations --- */
+
+/* Adjusting font sizes for smaller screens */
+@media (max-width: 650px) {
+  /* Reduce main container margin to use more vertical space */
+  .container {
+    margin: 30px 15px; 
+    padding: 25px;
+  }
+
+  /* Make main title smaller on small screens */
+  h1 {
+    font-size: 1.8em; 
+  }
+
+  /* Make the message text slightly smaller for easy reading */
+  #message {
+    font-size: 18px;
+    padding: 15px;
+  }
+
+  /* Ensure the meme image uses all available space */
+  .meme {
+      margin-top: 15px;
+      border-radius: 15px;
+  }
 }
