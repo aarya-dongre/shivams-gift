@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shivam Loser</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>For Shivam,</h1>
+    <button id="revealBtn">🎁 Click to reveal today's message</button>
+    <p id="message" class="hidden"></p>
+    <p>With Love,</p>
+    <p>Aarya 💕</p>
+    <a href="jokes.html" class="link">Click for a laugh😝</a>
+  </div>
+
+  <div id="countdown" style="text-align:center; margin-top: 40px; font-size: 16px; color: #666;"></div>
+
+  <script>
+    const messages = {
+      "2025-11-19": "happy anniversary baby!! how do you like the gift? ik its not much but it will make you happy for atleast some days, dw. ik you love messages so i tried to make this for you (will ChatGPT helped 🤪). i tried. i hope you like it. anyways, be ready for more messages to come. i love you. i hope you love it and please ignore the mistakes, if any. Love you always!!😘😘😘😘",
+      "2025-11-20": "I love your laugh 💕",
+      "2025-11-21": "You make every day brighter 🌈",
+    };
+
+    const today = new Date().toISOString().split('T')[0];
+    const message = messages[today] || "No message set for today 😢";
+    const lastClicked = localStorage.getItem("lastClickedDate");
+
+    const revealBtn = document.getElementById("revealBtn");
+    const messageBox = document.getElementById("message");
+
+    /*if (lastClicked === today) {
+      revealBtn.style.display = "none"
+      messageBox.textContent = message;
+      messageBox.classList.remove("hidden");
+    }*/
+
+    revealBtn.addEventListener("click", () => {
+      messageBox.textContent = message;
+      messageBox.classList.remove("hidden");
+      revealBtn.style.display = "none";
+      localStorage.setItem("lastClickedDate", today);
+    });
+
+    function updateCountdown() {
+      const now = new Date();
+      const tomorrow = new Date();
+      tomorrow.setHours(24, 0, 0, 0);
+      const diff = tomorrow - now;
+
+      const hours = Math.floor(diff / (1000 * 60 * 60));
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      document.getElementById("countdown").textContent =
+        `⏳ Next message in: ${hours}h ${minutes}m ${seconds}s`;
+    }
+
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>
