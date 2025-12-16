@@ -8,30 +8,111 @@
 </head>
 <body>
   <div class="container">
-    <h1>To make you happy today </h1>
-    <!--<img src="memes/2025-11-26.jpg" alt="Funny meme" class="meme"> -->
-    <h3>My wife came home early and caught me in bed with a beautiful woman!
-      She screamed:
-      “You filthy pig! How can you do this to me — to the mother of your children?! We’re getting a divorce!”
-      I said:
-      “Honey, please… just let me explain!”
-      She crossed her arms:
-      “Fine. Talk. But these will be your last words.”
-      So I told her:
-      “Look sweetheart… When I got off the bus, I saw this poor lady. She was freezing and starving, and she asked me for help. How could I ignore her?
-      I brought her home and gave her the pizza you didn’t eat last night because it was ‘too greasy.’ She devoured it.
-      She was filthy, so I told her she could take a shower.
-      While she was in the bathroom, I noticed her clothes were dirty and full of holes. So I gave her the lingerie I bought for our anniversary — the ones you hated because they were black. I gave her a pair of your jeans you never wear just because my mom bought them. Then I gave her that shirt you didn’t even unpack because it was from a cheap store.
-      Honey… you should’ve seen how happy she was. She was glowing.”
-      "I walked her to the door. She turned back, tears in her eyes, and said ‘Is there anything else your wife doesn’t use?"
-      “And as you can see… here we are. In bed.” </h3>
+    <h1>To make you happy today 😝</h1>
+    
+    <p id="joke-text" style="font-size: 20px; text-align: left; margin: 20px 0;"></p>
+    
+    <img id="daily-meme" class="meme" alt="Daily Funny Meme">
+    
+    <p id="no-content-message" style="display: none; font-size: 20px; color: #ff69b4;">No joke/meme set for today, but I still love you! ❤️</p>
+
     <a href="index.html" class="link">Back to Message 💌</a>
   </div>
+
+  <script>
+    const dailyContent = {
+      "2025-12-16": { 
+        joke: "Why don't scientists trust atoms? Because they make up everything!",
+        meme: ""
+      },
+      "2025-12-17": {
+        joke: "Merry Christmas! What do you call an elf who sings? A wrapper!",
+        meme: ""
+      },
+      "2025-12-18": {
+        joke: "Merry Christmas! What do you call an elf who sings? A wrapper!",
+        meme: ""
+      },
+      "2025-12-19": {
+        joke: "Merry Christmas! What do you call an elf who sings? A wrapper!",
+        meme: ""
+      },
+      "2025-12-20": {
+        joke: "Merry Christmas! What do you call an elf who sings? A wrapper!",
+        meme: ""
+      },
+      "2025-12-21": {
+        joke: "Merry Christmas! What do you call an elf who sings? A wrapper!",
+        meme: ""
+      },
+      "2025-12-22": {
+        joke: "Merry Christmas! What do you call an elf who sings? A wrapper!",
+        meme: ""
+      },
+      "2025-12-23": {
+        joke: "Merry Christmas! What do you call an elf who sings? A wrapper!",
+        meme: ""
+      },
+      "2025-12-24": {
+        joke: "Merry Christmas! What do you call an elf who sings? A wrapper!",
+        meme: ""
+      },
+      "2025-12-25: {
+        joke: "Merry Christmas! What do you call an elf who sings? A wrapper!",
+        meme: ""
+      },
+      "2025-12-26": {
+        joke: "Merry Christmas! What do you call an elf who sings? A wrapper!",
+        meme: ""
+      },
+      "2025-12-27": {
+        joke: "Merry Christmas! What do you call an elf who sings? A wrapper!",
+        meme: ""
+      },
+      "2025-12-28": {
+        joke: "Merry Christmas! What do you call an elf who sings? A wrapper!",
+        meme: ""
+      },
+      "2025-12-29": {
+        joke: "Merry Christmas! What do you call an elf who sings? A wrapper!",
+        meme: ""
+      },
+      "2025-12-30": {
+        joke: "Merry Christmas! What do you call an elf who sings? A wrapper!",
+        meme: ""
+      },
+      "2025-12-31": {
+        joke: "Merry Christmas! What do you call an elf who sings? A wrapper!",
+        meme: ""
+      },
+      "2026-01-01": {
+        joke: "Merry Christmas! What do you call an elf who sings? A wrapper!",
+        meme: ""
+      },
+    };
+
+    const today = new Date().toISOString().split('T')[0];
+    const content = dailyContent[today];
+    
+    const jokeTextBox = document.getElementById("joke-text");
+    const memeImg = document.getElementById("daily-meme");
+    const noContentMsg = document.getElementById("no-content-message");
+
+    if (content) {
+      jokeTextBox.textContent = content.joke;
+      
+
+      if (content.meme) {
+        memeImg.src = content.meme;
+        memeImg.style.display = 'block'; 
+      } else {
+        memeImg.style.display = 'none';       }
+
+    } else {
+      jokeTextBox.style.display = 'none';
+      memeImg.style.display = 'none';
+      noContentMsg.style.display = 'block';
+    }
+  </script>
 </body>
-
 </html>
-
-
-
-
-
