@@ -10,85 +10,52 @@
   <div class="container">
     <h1>To make you happy today 😝</h1>
     
-    <p id="joke-text" style="font-size: 20px; text-align: left; margin: 20px 0;"></p>
+    <h3 id="joke-text" style="font-size: 20px; text-align: left; margin: 20px auto; max-width: 90%;"></h3>
     
-    <img id="daily-meme" class="meme" alt="Daily Funny Meme">
+    <img id="daily-meme" class="meme" alt="Daily Funny Meme" style="display: none;">
     
-    <p id="no-content-message" style="display: none; font-size: 20px; color: #ff69b4;">No joke/meme set for today, but I still love you! ❤️</p>
+    <p id="no-content-message" style="display: none; font-size: 20px; color: #ff69b4; margin-top: 20px;">No joke/meme set for today, but I still love you! ❤️</p>
 
     <a href="index.html" class="link">Back to Message 💌</a>
   </div>
 
   <script>
     const dailyContent = {
-      "2025-12-16": { 
-        joke: "Why don't scientists trust atoms? Because they make up everything!",
+      "2025-12-16": {
+        joke: "A kindergarten teacher is trying to explain to her class the definition of the word 'definitely'. To make sure the students have a good understanding of the word, she asks them to use it in a sentence. The first student raised his hand and said, 'The sky is definitely blue'. The teacher said, 'Well, that isn't entirely correct, because sometimes it's grey and cloudy'. Another student says, 'Grass is definitely green.' The teacher again replies 'If grass doesn't get enough water it turns brown, so that isn't really correct either.' Finally, Billy raises his hand and asks the teacher 'Do farts have lumps?' The teacher looked at him and said 'No...But that isn't really a question you want to ask in class discussion.' So Billy replies, 'Then I definitely just shit my pants.'",
         meme: ""
       },
       "2025-12-17": {
-        joke: "Merry Christmas! What do you call an elf who sings? A wrapper!",
+        joke: "",
         meme: ""
       },
       "2025-12-18": {
-        joke: "Merry Christmas! What do you call an elf who sings? A wrapper!",
+        joke: "",
         meme: ""
       },
       "2025-12-19": {
-        joke: "Merry Christmas! What do you call an elf who sings? A wrapper!",
+        joke: "",
         meme: ""
       },
-      "2025-12-20": {
-        joke: "Merry Christmas! What do you call an elf who sings? A wrapper!",
-        meme: ""
+      "2025-12-20": { 
+        meme: "" 
       },
       "2025-12-21": {
-        joke: "Merry Christmas! What do you call an elf who sings? A wrapper!",
-        meme: ""
-      },
+        joke: "",
+        meme: "" 
+      }
       "2025-12-22": {
-        joke: "Merry Christmas! What do you call an elf who sings? A wrapper!",
-        meme: ""
-      },
+        joke: "",
+        meme: "" 
+      }
       "2025-12-23": {
-        joke: "Merry Christmas! What do you call an elf who sings? A wrapper!",
-        meme: ""
-      },
+        joke: "",
+        meme: "" 
+      }
       "2025-12-24": {
-        joke: "Merry Christmas! What do you call an elf who sings? A wrapper!",
-        meme: ""
-      },
-      "2025-12-25: {
-        joke: "Merry Christmas! What do you call an elf who sings? A wrapper!",
-        meme: ""
-      },
-      "2025-12-26": {
-        joke: "Merry Christmas! What do you call an elf who sings? A wrapper!",
-        meme: ""
-      },
-      "2025-12-27": {
-        joke: "Merry Christmas! What do you call an elf who sings? A wrapper!",
-        meme: ""
-      },
-      "2025-12-28": {
-        joke: "Merry Christmas! What do you call an elf who sings? A wrapper!",
-        meme: ""
-      },
-      "2025-12-29": {
-        joke: "Merry Christmas! What do you call an elf who sings? A wrapper!",
-        meme: ""
-      },
-      "2025-12-30": {
-        joke: "Merry Christmas! What do you call an elf who sings? A wrapper!",
-        meme: ""
-      },
-      "2025-12-31": {
-        joke: "Merry Christmas! What do you call an elf who sings? A wrapper!",
-        meme: ""
-      },
-      "2026-01-01": {
-        joke: "Merry Christmas! What do you call an elf who sings? A wrapper!",
-        meme: ""
-      },
+        joke: "",
+        meme: "" 
+      }
     };
 
     const today = new Date().toISOString().split('T')[0];
@@ -98,19 +65,22 @@
     const memeImg = document.getElementById("daily-meme");
     const noContentMsg = document.getElementById("no-content-message");
 
+    // Initially hide the image
+    memeImg.style.display = 'none';
+
     if (content) {
       jokeTextBox.textContent = content.joke;
+      jokeTextBox.style.display = 'block';
       
-
+      // If a meme path is provided, set the image source and display it
       if (content.meme) {
         memeImg.src = content.meme;
         memeImg.style.display = 'block'; 
-      } else {
-        memeImg.style.display = 'none';       }
+      }
 
     } else {
+      // If no content for today, hide the joke/meme elements and show the fallback message
       jokeTextBox.style.display = 'none';
-      memeImg.style.display = 'none';
       noContentMsg.style.display = 'block';
     }
   </script>
